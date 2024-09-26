@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
-const connect = mongoose.connect("mongodb+srv://nilaysharma2002:Nilay%4002@medi-mantra.ketkjri.mongodb.net/login-tut");
+const connect = mongoose.connect("mongodb+srv://nilaysharma2002:Nilay%@medi-mantra.ketkjri.mongodb.net/login-tut");
 const fs = require('fs');
 
 const app = express();
