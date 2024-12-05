@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const mongoose = require('mongoose');
-const connect = mongoose.connect("mongodb+srv://nilaysharma2002:Nilay@medi-mantra.ketkjri.mongodb.net/login-tut");
+const connect = mongoose.connect("mongodb+srv://nilaysharma2002:Nilay%4002@medi-mantra.ketkjri.mongodb.net/");
 const fs = require('fs');
 
 const app = express();
@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 
 
-// Define file schema and model
+
 const fileSchema = new mongoose.Schema({
     filename: String,
     path: String
@@ -21,10 +21,10 @@ app.get('/', (req, res) => {
 // Set up Multer for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './upload'); // Store uploads in 'uploads' folder
+        cb(null, './upload'); 
     },
     filename: (req, file, cb) => {
-        cb(null, file.originalname); // Keep original filename
+        cb(null, file.originalname);
     }
 });
 const upload = multer({ storage });
@@ -61,7 +61,7 @@ app.get('/doctor-report', async (req, res) => {
 // Set the view engine to render EJS templates
 app.set('view engine', 'ejs');
 
-// Start the server
+
 const port = 8000;
 app.listen(port, () => {
     console.log(`Server running on Port: ${port}`);
